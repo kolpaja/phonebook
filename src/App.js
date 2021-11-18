@@ -1,23 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+// import logo from './logo.svg';
+import './App.scss';
+
+import phone from "./utils/assets/imgs/phone.svg";
+import notebook from "./utils/assets/imgs/notebook.svg";
+import play from "./utils/assets/imgs/play.svg";
+import { Link } from 'react-router-dom';
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <div className="background">
+        <div className="title">PHONE BOOK</div>
+        <div className="open-book">
+          <Link to="/phonebook"><img src={play} alt="click to open book" /></Link>
+        </div>
+        <img className="notebook" src={notebook} alt="notebook" />
+        <div className="phone">
+          <img src={phone} alt="phone" />
+        </div>
+      </div>
     </div>
   );
 }

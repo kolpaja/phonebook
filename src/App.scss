@@ -1,0 +1,68 @@
+.App {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background-color: #b1e2ee;
+  .background {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    width: 600px;
+    height: 600px;
+    background-color: white;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    .title {
+      position: absolute;
+      top: 80px;
+      left: 200px;
+      width: 200px;
+      height: 100px;
+      text-align: center;
+      font-size: 30px;
+      font-weight: bolder;
+      color: #555;
+    }
+    .notebook {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      z-index: 1;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+    .open-book {
+      position: absolute;
+      left: 345px;
+      top: 180px;
+      width: 100px;
+      height: 100px;
+      z-index: 100;
+      overflow: hidden;
+      border-radius: 50%;
+      img {
+        width: 100px;
+        height: 100px;
+      }
+      &:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+      }
+    }
+    .phone {
+      overflow: hidden;
+      img {
+        position: absolute;
+        width: 200px;
+        height: 200px;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+  }
+}

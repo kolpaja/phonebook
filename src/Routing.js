@@ -10,7 +10,7 @@ import PhoneBook from "./components/PhoneBook";
 function Routing() {
 	return (
 		<Router>
-			<Switch>
+			<Switch >
 				<Route exact path="/" component={App} />
 				<Route exact path="/phonebook" component={PhoneBook} />
 			</Switch>

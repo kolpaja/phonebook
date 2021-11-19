@@ -1,8 +1,9 @@
 import React from 'react'
 
-const EditUser = () => {
+const EditUser = ({ user }) => {
+    console.log(user)
     return (
-        <div>
+        <div className="edit-user">
 
         </div>
     )

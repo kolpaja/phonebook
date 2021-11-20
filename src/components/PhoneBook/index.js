@@ -57,7 +57,7 @@ const PhoneBook = () => {
                 <div className="notebook-page">
                     <div className="page-header">
                         <div className="header-add">
-                            <span className="add-user" onClick={() => showModal()}><FaUserPlus /></span>
+                            <Link to="/adduser"> <span className="add-user"><FaUserPlus /></span></Link>
                         </div>
                         {userActive && <div className="user">
                             <FaUserCircle className="user-icon" />
@@ -104,8 +104,8 @@ const PhoneBook = () => {
 
                     </div>
                 </div>
+                {isModalVisible && <Modal handleCancel={handleCancel} handleOk={handleOk} user={userToEdit} />}
             </div>
-            {isModalVisible && <Modal handleCancel={handleCancel} handleOk={handleOk} user={userToEdit} />}
         </div>
     )
 }

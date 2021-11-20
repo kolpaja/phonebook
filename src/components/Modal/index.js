@@ -8,17 +8,15 @@ const Modal = ({ handleOk, handleCancel, user }) => {
     return (
         <div className="Backdrop">
             <div className="Modal">
+                <span className="x-icon" onClick={() => handleCancel()}>X</span>
                 <div className="modal-header">
-                    {user ? `Editing: ${user.name.toUppercase}` : "ADDING A NEW USER"}
-                    <span className="x-icon" onClick={() => handleCancel()}>X</span>
+                    {user && `Editing: ${user.name}`}
+
                 </div>
                 <div className="modal-container">
-                    {
-                        user ? <EditUser /> : <AddNewUser />
-                    }
+                    <EditUser user={user} handleOk={handleOk} />
                 </div>
                 <div className="modal-footer">
-                    <button onClick={() => handleOk()}>{user ? "Edit" : "Add"}</button>
                     <button onClick={() => handleCancel()}>Cancel</button>
                 </div>
             </div>

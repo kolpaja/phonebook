@@ -1,17 +1,19 @@
 .phonebook-container {
   background-color: #f3f3f3;
-  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   overflow: hidden;
 
   .phonebook {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border-radius: 10px;
     border: 1px solid gray;
     width: 1000px;
     height: 600px;
-    position: relative;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     padding: 20px;
     .notebook-page {
@@ -152,33 +154,85 @@
       }
     }
   }
+}
 
-  .new-user {
-    margin: 0 auto;
-    width: 1000px;
-    height: 430px;
-    padding: 20px;
+.new-user {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 580px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgb(136, 135, 135);
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  h1 {
+    width: 300px;
+    height: 70px;
+    margin: 10px auto;
+    text-align: center;
+  }
+  form {
     display: flex;
     flex-direction: column;
-    position: relative;
-    .user-name {
+    width: 460px;
+    height: 500px;
+    text-align: center;
+    .form-div {
+      width: 500px;
+      height: 100px;
       position: relative;
+      .label-company {
+        width: 80px;
+      }
+      .label-website {
+        width: 65px;
+      }
     }
-    .name-input {
-      width: 300px;
-      height: 40px;
+  }
+  .form-add-btn {
+    background-color: rgb(31, 31, 248);
+    color: white;
+    font-size: 18px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+    text-align: center;
+    align-self: center;
+    width: 110px;
+    height: 40px;
+    margin-bottom: 10px;
+
+    &:hover {
+      cursor: pointer;
+      background-color: blue;
+    }
+  }
+  .add-footer {
+    display: flex;
+    justify-content: center;
+    height: 70px;
+    a {
+      margin-left: 20px;
+      text-align: center;
+      align-self: center;
     }
   }
 }
-
 .form__input {
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 100%;
-  height: 100%;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 100;
+  width: 300px;
+  height: 40px;
   border: 1px solid #d9d9d9;
-  transform: translateX(-50%);
   border-radius: 17px;
   color: black;
   outline: none;
@@ -199,8 +253,11 @@
 .form__label {
   position: absolute;
   font-family: 'Poppins';
-  left: 1rem;
-  top: 16px;
+  z-index: 100;
+  left: 125px;
+  top: 28px;
+  width: 50px;
+  height: 20px;
   padding: 0 0.5rem;
   color: #4d4d4f;
   cursor: text;
@@ -212,9 +269,97 @@
 
 .form__input:focus ~ .form__label,
 .form__input:not(:placeholder-shown).form__input:not(:focus) ~ .form__label {
-  top: -12px;
-  left: 0.8rem;
+  left: 120px;
+  top: 7px;
   font-family: 'Poppins';
   color: black;
   background-color: white;
+}
+
+.edit-user {
+  display: flex;
+  flex-direction: column;
+  form {
+    display: flex;
+    flex-direction: column;
+    .edit-div {
+      position: relative;
+      position: relative;
+      width: 300px;
+      height: 80px;
+      // background-color: rgb(182, 181, 181);
+    }
+    button {
+      width: 130px;
+      height: 40px;
+      text-align: center;
+      border: none;
+      color: white;
+      background-color: rgba(11, 14, 189, 0.822);
+      border-radius: 10px;
+      font-size: 18px;
+      margin-left: 100px;
+      &:hover {
+        background-color: blue;
+        cursor: pointer;
+      }
+    }
+    .label-company {
+      width: 80px;
+    }
+    .label-website {
+      width: 65px;
+    }
+  }
+  .form-input {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 100;
+    width: 300px;
+    height: 40px;
+    border: 1px solid #d9d9d9;
+    border-radius: 17px;
+    color: black;
+    outline: none;
+    padding: 1.25rem;
+    background-color: #f6f6f6;
+
+    &:hover {
+      border-color: #3db389;
+    }
+
+    /* Change border when input focus*/
+
+    &:focus {
+      border-color: #3db389;
+    }
+  }
+
+  .form-label {
+    position: absolute;
+    font-family: 'Poppins';
+    z-index: 100;
+    left: 20px;
+    top: 28px;
+    width: 50px;
+    height: 20px;
+    padding: 0 0.5rem;
+    color: #4d4d4f;
+    cursor: text;
+    font-size: 12px;
+    border-radius: 17px;
+    transition: top 200ms ease-in, left 200ms ease-in, font-size 200ms ease-in;
+    background-color: transparent;
+  }
+
+  .form-input:focus ~ .form-label,
+  .form-input:not(:placeholder-shown).form-input:not(:focus) ~ .form-label {
+    left: 15px;
+    top: 7px;
+    font-family: 'Poppins';
+    color: black;
+    background-color: white;
+  }
 }

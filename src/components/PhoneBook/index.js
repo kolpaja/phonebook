@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux'
 import Modal from '../Modal';
 import "./style.scss"
 import { deleteUser, editUser, fetchOne, fetchUsers } from '../../api';
@@ -7,6 +8,7 @@ import {
     FaUserPlus,
 } from "react-icons/fa";
 import { Link } from 'react-router-dom';
+import { getUsers } from '../../utils/store/slices/users';
 
 
 const PhoneBook = () => {
@@ -15,7 +17,8 @@ const PhoneBook = () => {
     const [users, setUsers] = useState()
     const [isModalVisible, setIsModalVisible] = useState(false);
 
-    console.log(userActive)
+    const fetchedUsers = useSelector((state) => state.users.list)
+    const dispatch = useDispatch()
 
     const showModal = () => {
         setIsModalVisible(true);
@@ -44,12 +47,8 @@ const PhoneBook = () => {
         } catch (error) {
             console.log(error)
         }
-        try {
-            fetchUsers()
-                .then(res => setUsers(res.data))
-        } catch (error) {
-            console.log(error)
-        }
+        dispatch(getUsers())
+        setUsers(fetchedUsers)
     }, [])
     return (
         <div className="phonebook-container">

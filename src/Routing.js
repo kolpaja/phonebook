@@ -1,7 +1,6 @@
 import {
 	Route,
 	Switch,
-	Redirect,
 	BrowserRouter as Router,
 } from "react-router-dom";
 import App from "./App"

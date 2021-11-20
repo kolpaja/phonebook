@@ -1,15 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import { store } from './utils/store'
-import { Provider } from 'react-redux'
 import Routing from './Routing';
 
 ReactDOM.render(
-  <React.StrictMode>
-    <Provider store={store}>
-      <Routing />
-    </Provider>
-  </React.StrictMode>,
+  <React.Fragment>
+    <Routing />
+  </React.Fragment>,
   document.getElementById('root')
 );

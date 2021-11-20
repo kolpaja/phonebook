@@ -2,7 +2,6 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
 const EditUser = ({ user, handleOk }) => {
-    console.log(user)
     const [userData, setUserData] = useState({
         name: "",
         address: {
@@ -29,9 +28,7 @@ const EditUser = ({ user, handleOk }) => {
                         className="form-input"
                         placeholder=" "
                         required
-                        onChange={e => setUserData({
-                            ...userData, name: e.target.value
-                        })}
+                        onChange={e => setUserData({ ...userData, name: e.target.value })}
                     />
                     <label htmlFor="firstName" className="form-label">
                         Name
@@ -62,9 +59,7 @@ const EditUser = ({ user, handleOk }) => {
                         className="form-input"
                         placeholder=" "
                         required
-                        onChange={e => setUserData({
-                            ...userData, company: e.target.value
-                        })}
+                        onChange={e => setUserData({ ...userData, company: e.target.value })}
                     />
                     <label htmlFor="company" className="label-company form-label">
                         Company
